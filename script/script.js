@@ -21,7 +21,8 @@ const handleCategory = async() =>{
 const handleVideos = async (categoryId) => {
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
     const data = await response.json();
-    const videoContainer = document.getElementById('video-container')
+    const videoContainer = document.getElementById('video-container');
+    videoContainer.innerHTML ="";
     const videoList = data.data;
     videoList.forEach((videos) => {
         console.log(videos);
@@ -64,6 +65,5 @@ const handleBlog = () =>{
   window.open("blog.html", "_blank");
 }
 
-
-
 handleCategory();
+handleVideos("1000");
