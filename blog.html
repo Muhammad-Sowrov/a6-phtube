@@ -27,10 +27,10 @@
       }
     </style>
 </head>
-<body class="font-inte">
+<body class="font-inter">
     <main class="container mx-auto">
         <section class="sm:my-auto mx-auto md:my-40 lg:my-40 md:mx-40 lg:mx-40">
-            <div class="join join-vertical w-full">
+            <div class="join join-vertical w-full ">
                 <h1 class="text-center text-sky-300 text-5xl font-semibold mb-10">Blog Questions</h1>
                 <div class="collapse collapse-arrow join-item border border-base-300">
                   <input type="radio" name="my-accordion-4" checked="checked" /> 
@@ -38,25 +38,50 @@
                     Discuss the scope of var, let, and const.
                   </div>
                   <div class="collapse-content"> 
-                    <p>hello</p>
+                    <p>
+                      In JavaScript, var, let, and const are used to declare variables, but they have different scoping rules and behavior. <br>
+                      <br>
+                      Scope of 'var': <br>
+                      1. Var can not be used outside of the function.<br>
+                      2. If a 'var' declare outside of a function then it becomes a global function.<br>
+                      <br>
+                      Scope of 'let': <br>
+                      1. 'let' are blocked scope. It means they are not accessible outside of that block.<br>
+                      2. 'let' variable can be reassign. <br>
+                      <br>
+                      Scope of 'const': <br>
+                      1. 'const' variable are also blocked scope like 'let'. <br>
+                      2. 'const' variable are constant. That means they can not be reassign.
+                    </p>
                   </div>
                 </div>
                 <div class="collapse collapse-arrow join-item border border-base-300">
                   <input type="radio" name="my-accordion-4" /> 
                   <div class="collapse-title text-xl font-medium">
-                    Tell us the use cases of null and undefined.
+                    2. Tell us the use cases of null and undefined.
                   </div>
                   <div class="collapse-content"> 
-                    <p>hello</p>
+                    <p>Undefined means the variable has been declared, but its value has not been assigned. Null means an empty value or a blank value.
+                    <br>
+                    <br>
+                    Use cases of null:<br>
+                      1. When you don't have the value then you can use 'null' as absence of value. <br>
+                      2. You can use 'null' as temporary placeholder for a value that will be assigned later.<br>
+                      <br>
+                    Use case of undefined: <br>
+                      1. When parameter is not declare then it will automatically set 'undefined'. <br>
+                      2. When function is called with fewer data that needed then missing data will set to as 'undefined' . <br>
+                    
+                    </p>
                   </div>
                 </div>
                 <div class="collapse collapse-arrow join-item border border-base-300">
                   <input type="radio" name="my-accordion-4" /> 
                   <div class="collapse-title text-xl font-medium">
-                    What do you mean by REST API?
+                    3. What do you mean by REST API?
                   </div>
                   <div class="collapse-content"> 
-                    <p>hello</p>
+                    <p>A REST API is an application programming interface that conforms to the constraints of REST architectural style and allows for interaction with RESTful web services.</p>
                   </div>
                 </div>
               </div>
