@@ -85,25 +85,5 @@ const handleBlog = () =>{
   window.open("blog.html", "_blank");
 }
 
-const noData = async(category)=>{
-  const response = await fetch(`https://openapi.programming-hero.com/api/videos/categories`);
-  const data = await response.json();
-  const idSection = document.getElementById('sectionC');
-  console.log(data);
-  if( data.length===0 && data.data[3] === 0){
-    idSection.classList.remove("hidden");
-  }
-  else{
-    idSection.classList.add("hidden");
-  }
- 
-};
-
-
-
-
-
-
 handleCategory();
 handleVideos("1000");
-noData();
