@@ -13,7 +13,7 @@ const handleCategory = async() =>{
         tabContainer.appendChild(div);
 
     });
-    console.log(data.data);
+    // console.log(data.data);
 
 };
 const handleVideos = async (categoryId) => {
@@ -23,9 +23,20 @@ const handleVideos = async (categoryId) => {
     const videoContainer = document.getElementById('video-container');
     videoContainer.innerHTML ="";
     const videoList = data.data;
-    // console.log(videoList);
     videoList.forEach((videos) => {
-        // console.log(videos);
+        const second = videos?.others?.posted_date;
+        const hours = Math.floor(second/3600);
+        const remainSecond = hours%3600;
+        const minutes = Math.floor(remainSecond/60);
+        let textContent = `
+        ${hours}hrs ${minutes} min ago
+        `;
+        if(hours === 0 && minutes === 0){
+          textContent =`
+          ${""}
+          `;
+          
+        }
         const svgIcon = videos?.authors[0]?.verified === true?`
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
               <g clip-path="url(#clip0_11_34)">
@@ -42,8 +53,9 @@ const handleVideos = async (categoryId) => {
         const div = document.createElement("div");
         div.innerHTML = `
         <div class="card w-full bg-base-100 shadow-xl font-inter">
-            <figure class="px-10 pt-10">
+            <figure class="px-10 pt-10 relative">
               <img src="${videos?.thumbnail}" alt="product" class="rounded-lg w-full h-28" />
+              <p id="hours-min" class="absolute bottom-1 right-10 bg-gray-950 text-white">${textContent}</p>
             </figure>
             <div class="items-center flex gap-4">
               <img
@@ -68,29 +80,13 @@ const handleVideos = async (categoryId) => {
 
 
 
-// const sectionC = document.getElementById('sectionC')
-//     const errorDiv = data?.data?.length=== 0?`
-//         <div class="text-center flex flex-col items-center container mx-auto">
-//           <img src="images/Icon.png" alt="">
-//           <h1>Oops!! Sorry, There is no content here</h1>
-//         </div>
-//         `: '';
-//     const div2 = document.createElement('div');
-//     div.innerHTML=`
-//     <section>${errorDiv}</section>
-//     `;
-//     sectionC.appendChild(div);
-
-
-
 const blog = document.getElementById('handleBlog');
 const handleBlog = () =>{
   window.open("blog.html", "_blank");
 }
 
+
+
+
 handleCategory();
 handleVideos("1000");
-
-
-
-// ${videos?.authors[0]?.verified}
