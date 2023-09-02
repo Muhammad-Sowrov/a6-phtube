@@ -86,7 +86,24 @@ const handleBlog = () =>{
 }
 
 
+const noContent = async(category) =>{
+  const response = await fetch(`https://openapi.programming-hero.com/api/videos/categories`);
+  const data = await response.json();
+  const emptyContent = document.getElementById('sectionC');
+  const fData = data;
+  console.log(fData);
+  if (fData.length === 0){
+    emptyContent.setAttribute("hidden");
+  }
+  else{
+    emptyContent.removeAttribute("hidden", true);
+  }
+
+
+}
+
 
 
 handleCategory();
 handleVideos("1000");
+noContent();
